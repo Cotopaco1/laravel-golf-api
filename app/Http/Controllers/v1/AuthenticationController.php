@@ -30,5 +30,7 @@ class AuthenticationController extends Controller
                 'expiration_time' => $expiration
             ]);
         }
+        return ApiResponse::error('Wrong credentials', statusCode: 401);
     }
+
 }
