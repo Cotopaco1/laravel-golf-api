@@ -45,7 +45,7 @@ class ListingSeeder extends Seeder
                 'condition' => 'used',
                 'end_date' => '2026-01-12 10:00:00',
                 'category_id' => 1,
-                'user_id' => 1,
+                'user_id' => 2,
                 'created_at' => Carbon::now()->subDays(5),
             ],
 
@@ -66,7 +66,7 @@ class ListingSeeder extends Seeder
                 'condition' => 'used',
                 'end_date' => '2026-01-11 09:15:00',
                 'category_id' => 2,
-                'user_id' => 1,
+                'user_id' => 2,
                 'created_at' => Carbon::now()->subWeeks(2),
             ],
             [
@@ -118,7 +118,7 @@ class ListingSeeder extends Seeder
                 'condition' => 'used',
                 'end_date' => '2026-01-10 22:00:00',
                 'category_id' => 4,
-                'user_id' => 1,
+                'user_id' => 2,
                 'created_at' => Carbon::now()->subDays(2),
             ],
             [
@@ -169,7 +169,7 @@ class ListingSeeder extends Seeder
                 'condition' => 'new',
                 'end_date' => '2026-01-12 12:10:00',
                 'category_id' => 5,
-                'user_id' => 1,
+                'user_id' => 2,
                 'created_at' => Carbon::now()->subDays(8),
             ],
 
