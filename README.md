@@ -1,3 +1,6 @@
+# Listings RestAPI
+This project provides a REST API to manage user listings.
+It was created as part of a technical assessment.
 
 ## Installation
 
@@ -22,6 +25,7 @@ composer install
 ```bash
 php artisan migrate --seed
 ```
+NOTE: Listings migrated using the seeder are missing AI enrichment text.
 
 ### Start Your Preferred Server
 Point it to `public/index.php`
