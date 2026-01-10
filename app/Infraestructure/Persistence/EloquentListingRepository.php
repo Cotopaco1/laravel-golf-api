@@ -57,14 +57,16 @@ class EloquentListingRepository implements ListingRepositoryInterface
             ->when($filters->condition, fn($query, $condition)=> $query->where('condition', $condition->value))
             ->when($filters->keywords, function($query, $keywords){
                 /*Map array*/
-                foreach ($keywords as $keyword){
-                    $query->orWhere('title', 'like', "%$keyword%");
-                    $query->orWhere('description', 'like', "%$keyword%");
-                }
+                $query->where(function($q) use($keywords){
+                    foreach ($keywords as $keyword){
+                        $q->orWhere('title', 'like', "%$keyword%");
+                        $q->orWhere('description', 'like', "%$keyword%");
+                    }
+                });
 
             })
             ->when(!$filters->showAll, function($query){
-                $query->where('end_date', '<=', now()->toDateTime());
+                $query->where('end_date', '>=', now()->toDateTime());
                 $query->orderBy('created_at', 'asc');
             })
             ->when($filters->showAll, function($query){
