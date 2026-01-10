@@ -25,7 +25,10 @@ composer install
 ```bash
 php artisan migrate --seed
 ```
-NOTE: Listings migrated using the seeder are missing AI enrichment text.
+
+Also, you can use [example.sql](./database/sql/example.sql) instead of the seeder. If so, you must use the **APP_KEY** provided in .env.example
+
+**NOTE:** Listings migrated using the seeder are missing AI enrichment text.
 
 ### Start Your Preferred Server
 Point it to `public/index.php`
@@ -44,9 +47,11 @@ Email: sergio@test.com
 Password: password123
 ```
 
-### API Documentation
+## API Documentation
 Open the [Postman collection](./Golf.postman_collection.json) for endpoint guidance.
 
-### Technical Decisions
+
+
+## Technical Decisions
 - The `create listing` endpoint doesn't return AI enrichment text immediately because the enrichment job runs asynchronously.
 
